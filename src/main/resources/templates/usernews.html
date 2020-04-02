@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>register</title>
+</head>
+<body>
+<h2>欢迎</h2>
+    <ul><a href="/changeuser">修改个人信息</a></ul>
+    <ul><a href="/changepwd">修改密码</a></ul>
+<form th:action="@{/usernews}" method="post">
+    <div>
+        <ul>
+            <li>
+                邮箱：<p name="email" th:text="${putemail}"></p>
+            </li>
+            <li>
+                昵称：<p name="name" th:text="${putusername}"></p>
+            </li>
+            <li>
+                性别：<p name="sex" th:text="${putsex}"></p>
+            </li>
+            <li>
+                生日：<p name="birthday" th:text="${putbirthday}"></p>
+            </li>
+            <li>
+                年龄：<p name="age" th:text="${putage}"></p>
+            </li>
+        </ul>
+    </div>
+</form>
+</body>
+</html>

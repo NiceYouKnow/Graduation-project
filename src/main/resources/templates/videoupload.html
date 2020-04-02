@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>上传</title>
+</head>
+<body>
+<h1>欢迎您！</h1>
+<form id="loginform" class="form-horizontal" method="post" enctype="multipart/form-data"
+                          th:action="@{/govideoupload}">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">标题</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="title" class="form-control" id="inputEmail3"
+                                       placeholder="标题">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">文件</label>
+                            <div class="col-sm-10">
+                                <input type="file" id="chooseImage" name="file">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default updatabtn" alt="">上传</button>
+
+                            </div>
+                        </div>
+                    </form>
+</body>
+</html>

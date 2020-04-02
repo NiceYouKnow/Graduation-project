@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>register</title>
+</head>
+<body>
+<h2>欢迎修改</h2>
+<form th:action="@{/gochangeuser}" method="post">
+    <div>
+        <ul>
+            <li>
+                邮箱：<p name="email" th:text="${putemail}"></p>
+                <!-- <input type="text" name="email" placeholder="邮箱" th:value="${putemail}"> -->
+            </li>
+            <li>
+                昵称：<input type="text" name="name" placeholder="昵称" th:value="${putusername}">
+            </li>
+            <li>
+                性别：<input type="text" name="sex" placeholder="性别" th:value="${putsex}">
+            </li>
+            <li>
+                生日：<input type="date" name="birthday" placeholder="生日" th:value="${putbirthday}">
+            </li>
+            <li>
+                年龄：<input type="number" name="age" placeholder="年龄" th:value="${putage}">
+            </li>
+        </ul>
+        <div>
+            <button type="submit" >修改</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>
