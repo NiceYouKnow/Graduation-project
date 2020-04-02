@@ -1,10 +1,10 @@
 # demo
-#@auther:yunfei_fan
 毕业设计
 基于SPring Boot的视频网站
+# @auther:yunfei_fan
 
 
-#fastdfs文件服务器搭建
+# fastdfs文件服务器搭建
 ubuntu安装docker：
 更新apt包索引：
 sudo apt update  
