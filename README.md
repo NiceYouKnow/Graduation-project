@@ -1,6 +1,6 @@
 # demo
 毕业设计
-基于SPring Boot的视频网站
+基于Spring Boot的视频网站
 # @auther:yunfei_fan
 
 
