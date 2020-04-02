@@ -1,7 +1,7 @@
 # demo
 毕业设计
 基于Spring Boot的视频网站
-# @auther:yunfei_fan
+ @auther:yunfei_fan
 
 # 数据库--MYSQL
 MYSQL安装较为简单，请查阅相关资料安装
