@@ -41,9 +41,9 @@ public class RegisterController {
         Email = Email.trim();
         Username = Username.trim();
         Password = Encrypt.stringMD5(Password.trim());
-        Sex = Sex.trim();
+        Sex = Sex.trim();//注册参数
         System.out.println("-测试插入数据-");
-        Integer userRegister=registerservice.select(Email, Password);//封装查询
+        Integer userRegister=registerservice.select(Email);//封装查询
         // Login entity=new Login();
         // entity.setUsername( Username);
         // entity.setUsername( Password);

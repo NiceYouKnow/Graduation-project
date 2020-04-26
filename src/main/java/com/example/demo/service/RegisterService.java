@@ -22,10 +22,10 @@ public class RegisterService {
 
 private RegisterMapper registerMapper;
 
- public Integer select(String email, String password){
+ public Integer select(String email){
      Register register = new Register();
      register.setEmail(email);
-     register.setPassword(password);
+     //register.setPassword(password);
     Integer userRegister = registerMapper.select(register); 
     return userRegister; //返回的userLogin为0或1
     //注册查询数据库方法
