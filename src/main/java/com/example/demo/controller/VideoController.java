@@ -104,7 +104,7 @@ public class VideoController {
         oldvideo.setId(id);
 
         Video video = videoService.getVideoById(oldvideo);//查询视频
-        String filepath=Sha1withRSAUtil.decode(video.getPath());
+        String filepath=Sha1withRSAUtil.decode(video.getPath());//base64解码后通过私钥文件进行解密
         model.addAttribute("title", video.getTitle());//返回视频名
         model.addAttribute("path", filepath);//返回播放链接
         return "videoplay";

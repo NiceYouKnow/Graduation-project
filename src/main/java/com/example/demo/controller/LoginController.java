@@ -34,7 +34,7 @@ public class LoginController{
      @RequestParam(value = "password1", required = false) String Password,
      Map<String, Object> map)//获取前端登陆数据
     {
-        Password = Encrypt.stringMD5(Password);
+        Password = Encrypt.stringMD5(Password);//对password MD5加密
         System.out.println("-测试插入数据-");
         Integer userlogin=loginservice.select(Email, Password);//封装查询
         // Login entity=new Login();
