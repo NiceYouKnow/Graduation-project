@@ -1,6 +1,10 @@
 package com.example.demo.tools;
 
 import javax.crypto.Cipher;
+
+import org.apache.ibatis.javassist.ClassPath;
+import org.springframework.core.io.ClassPathResource;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -16,8 +20,8 @@ import java.util.Base64;
 import java.util.Base64.Decoder;
 
 public class Sha1withRSAUtil {
-    private static final String publicKeyFileName = System.getProperty("user.dir") + File.separator + "public-rsa.cer";
-    private static final String privateKeyFileName = System.getProperty("user.dir") + File.separator + "user-rsa.pfx";
+    private static final String publicKeyFileName = System.getProperty("user.dir")+File.separator+"public-rsa.cer";
+    private static final String privateKeyFileName = System.getProperty("user.dir")+File.separator+"user-rsa.pfx";
     private static final String pfxPassword = "748596";//私钥文件获取时设置的密钥
     private static String aliasName = "nice";//alias名称
 

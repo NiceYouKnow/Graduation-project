@@ -17,35 +17,35 @@ class DemoApplicationTests {
 
 	@Test
 	public void Upload() {
-		String fileUrl = this.getClass().getResource("/static/test.jpg").getPath();//测试照片文件是否存储成功
+		String fileUrl = this.getClass().getResource("/static/test.jpg").getPath();// 测试照片文件是否存储成功
 		File file = new File(fileUrl);
 		String str = FastDFSClient.uploadFile(file);
 		FastDFSClient.getResAccessUrl(str);
-	}
- 
-	@Test
-	public void Delete() {
-		FastDFSClient.deleteFile("group1/M00/00/00/wKiOgV58LPKAAwXpABu6FUtZEHg324.jpg");//测试删除文件服务上的照片文件
+		if (FastDFSClient.deleteFile(str)) {// 测试删除文件
+			System.out.println("ok");
+		} else {
+			System.out.println("erro");
+		}
 	}
 
 	@Test
-	public void Md5(){
+	public void Md5() {
 		String text = "123456";
 		String md5text = Encrypt.stringMD5(text);
-		System.out.println("Md5="+md5text);
+		System.out.println("Md5=" + md5text);
 
 	}
 
 	@Test
 
-	public void Sha1withRSA(){
+	public void Sha1withRSA() {
 		String data = "0123456789";
 		System.out.println(data);
 
 		String singData = Sha1withRSAUtil.sign(data);
 		System.out.println(singData);
 
-		try{
+		try {
 			boolean flag = Sha1withRSAUtil.verify(singData, data);
 			System.out.println(flag);
 
@@ -53,7 +53,7 @@ class DemoApplicationTests {
 			System.out.println(eData);
 			String dData = Sha1withRSAUtil.decode(eData);
 			System.out.println(dData);
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
