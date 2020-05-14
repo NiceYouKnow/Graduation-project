@@ -54,7 +54,6 @@ public class VideoController {
         //     String efilepath = Sha1withRSAUtil.encrypt(filepath);//通过公钥文件进行加密数据后经过base64处理
         //     return efilepath;
         // } catch (Exception e) {
-        //     // TODO Auto-generated catch block
         //     e.printStackTrace();
         // }        
         String efilepath = Sha1withRSAUtil.encrypt(filepath);//通过公钥文件进行加密数据后经过base64处理
