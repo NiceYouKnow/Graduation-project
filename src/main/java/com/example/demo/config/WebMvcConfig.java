@@ -17,6 +17,7 @@ public class WebMvcConfig implements WebMvcConfigurer{
         registry.addViewController("/homepage").setViewName("homepage");//映射的路径
         registry.addViewController("/login").setViewName("/");//映射的路径
         registry.addViewController("/changeuser").setViewName("changeuser");//映射的路径
+        registry.addViewController("/notice").setViewName("notice");//映射的路径
     }
 
     @Override

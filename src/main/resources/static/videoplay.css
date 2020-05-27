@@ -1,0 +1,263 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: linear-gradient(125deg,#6a89cc,#b8e994);
+}
+.panel{
+    height: 100%;
+    width: 100%;
+    
+}
+.head{
+    color: palevioletred;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: normal;
+    text-decoration: underline;
+    text-transform:uppercase;
+    text-align: center;
+}
+.panel-head{
+    
+    height: 30px;
+    width: 100%;
+}
+.panel-head .headlt{
+    
+    float: left;
+    width: 400px;
+    height: 30px;
+}
+.panel-head .headlt a{
+    margin-left: 50px;
+    font-size: 20px;
+    text-decoration: none;
+}
+.panel-head .headlt a:hover{
+    color: pink;
+}
+.panel-head .headrt{
+    float: right;
+    width: 300px;
+    height: 30px;
+    
+}
+.panel-head .headrt .search{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    transition: width 0.5s;
+    overflow: hidden;
+}
+.search input{
+     position: absolute;
+     right: 0px;
+     width: calc(100% - 30px);
+     height: 30px;
+     border: none;
+     outline: none;
+     font-size: 20px;
+     color: #666;
+}
+.panel-head .headrt .search.active{
+    width: 300px
+}
+.panel-head .headrt .search .icon{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 4px;
+    background-image: url("/搜索1.png");
+}
+.panel-head .headrt .search.active .icon{
+    background-image: url("/删除.png");
+    /* background-size: 100% 100%; */
+    background-size: cover;
+}
+
+.panel-body{
+    height: 550px;
+    
+    margin: 10px auto 0 auto;
+}
+.panel-body .video{
+    height: 500px;
+    width:  800px ;
+    margin-top: 10px;
+}
+.panel-bot{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.2s;
+    margin-left: 450px;
+    margin-top: 50px;
+}
+.panel-bot .item{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform 0.3s;
+}
+.panel-bot .item .more{
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    right: 10px;
+    bottom: 50px;
+    padding: 4px 8px 4px 12px;
+    font-size: 12px;
+    letter-spacing:4px ;
+    color: #ffffff;
+    opacity: 0;
+    transition: opacity 0.2s;/*"更多"过渡动画*/
+}
+.panel-bot:hover .item .more{
+    opacity: 1;
+}
+.panel-bot .item img{
+    width: 100%;
+    height: 100%;
+    user-select: none;
+}
+.panel-bot .item p{
+    position: absolute;
+    bottom: 10px;
+    left: 14px;
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+.panel-bot .trigger{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    cursor: default;
+}
+.panel-bot .trigger span{
+    display: inline-block;
+    background-color: #ffffff;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition:all 0.2s ;
+}
+.panel-bot .trigger span:hover{
+    transform: scale(1.2);
+    border: 2px solid #ffffff;
+    background-color: aqua;
+}
+.panel-bot .trigger span.active{
+    background-image: url("/灯泡.png");
+    transform: scale(2);
+    background-size: 100% 100%;
+    border: 0;
+    background-color:transparent ;
+}
+.player .title{
+    width: 1000px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+
+    margin-top: 50px;
+}
+.player .videocontent{
+
+    width: 1000px;
+    height: 500px;
+}
+.player .videocontent .video{
+    width: 1000px;
+    height: 494px;
+}
+.player .controls{
+    width: 1200px;
+    height: 50px;
+ 
+}
+.player .controls .play{
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 7px 9px 0 9px;
+    background-image: url(/暂停.png);
+    background-size: 30px,30px;
+}
+.player .controls .volumeadd{
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 8px 9px 0 9px;
+    background-image: url(/大音量.png);
+    background-size: 30px,30px;
+}
+.player .controls .volumesub{
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 8px 9px 0 9px;
+    background-image: url(/小音量.png);
+    background-size: 30px,30px;
+}
+.player .controls .progress{
+    float: left;
+    width: 700px;
+    height: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+
+    position: relative;
+}
+.player .controls .fullscreen{
+    float: left; 
+    width: 30px;
+    height: 30px;
+    margin: 7px 9px 0 9px;
+    background-image: url(/全屏.png);
+    background-size: 30px,30px;
+}
+
+.player .controls .progress .pro_bg{
+    float: left;
+    width: 15px;
+    height: 15px;
+    background-color:pink ;
+    border-radius: 8px;
+}
+.player .controls .progress .bar{
+    float: left;
+    width: 15px;
+    height: 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.currentTime{
+    float: left;
+    margin-top: 12px;
+    margin-right: 5px;
+
+}
+.duration{
+    float: left;
+    margin-top: 10px;
+}
