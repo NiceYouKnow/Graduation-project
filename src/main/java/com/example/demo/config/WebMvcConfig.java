@@ -24,6 +24,6 @@ public class WebMvcConfig implements WebMvcConfigurer{
         //添加拦截的请求，并排除几个不拦截的请求
         InterceptorRegistration registration = registry.addInterceptor(new LoginHandlerInterceptor());
         registration.addPathPatterns("/**");
-        registration.excludePathPatterns("login.html","/","/login","/register","/user/register");
+        registration.excludePathPatterns("login.html","/","/login","/register","/user/register","attack.html");
     }
 }

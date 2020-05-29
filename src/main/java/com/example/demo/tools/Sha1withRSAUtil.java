@@ -2,9 +2,6 @@ package com.example.demo.tools;
 
 import javax.crypto.Cipher;
 
-import org.apache.ibatis.javassist.ClassPath;
-import org.springframework.core.io.ClassPathResource;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;

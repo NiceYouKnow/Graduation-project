@@ -120,8 +120,8 @@ public class VideoController {
         if (video != null) {
 
             try{
-
-                boolean result = FastDFSClient.deleteFile(video.getPath());//删除fastdfs文件服务器上对应的视频
+                String filepath=Sha1withRSAUtil.decode(video.getPath());//base64解码后通过私钥文件进行解密
+                boolean result = FastDFSClient.deleteFile(filepath);//删除fastdfs文件服务器上对应的视频
                 if (result) {
                     videoService.deleteVideoById(id);//删除MySQL上的视频信息
 
