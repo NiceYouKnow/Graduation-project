@@ -1,21 +1,252 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" th:href="@{/videoplay.css}">
     <title>在线视频播放</title>
+    
 </head>
 <body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.13.0/js/md5.min.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/videoplay.js"></script>
 <div class="panel panel-default">
-    <div class="panel-body" align="center">
-        <div id="a1" align="center" th:text="${title}"></div><br/>
-        <video width="600" height="400" align="center" controls>
+    <h3 class="head">视频播放</h3>
+    <div class="panel-head">
+        <div class="headlt">
+            <a href="/homepage">主页</a>
+            <a href="/videolist">视频列表</a>
+            <a href="videoupload">视频上传</a>
+        </div>
+        <div class="headrt">
+            <div class="search">
+                <input type="text" placeholder="搜索..." name="keyword" id="keyword" onkeydown="entersearch()">
+                <div class="icon"></div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body player" align="center">
+        <div class="title" id="a1"  th:text="${title}">
+        </div>
+        <div class="videocontent" id="videocontent">
+        <video    class="video">
             <source th:src="@{${path}}" type="video/mp4">
-
             您的浏览器不支持 HTML5 video 标签。
         </video>
-
+        </div>
+        <div class="controls">
+            <div class="play"></div>
+            <div class="volumeadd" onclick="AddVolume()"></div>
+            <div class="volumesub" onclick="SubVolume()"></div>
+            <div class="currentTime" id="currentTime">00:00:00</div>
+            <div class="progress">
+                <div class="pro_bg" id="pro_bg"></div>
+                <div class="bar" id="bar"></div>
+            </div>
+            <div class="duration" id="duration">00:00:00</div>
+            <div class="fullscreen" onclick="FullScreen()"></div>
+        </div>
+    </div>
+    <div class="panel-bot slider" id="lunbo-panel">
+        <div class="item">
+            <a href="">
+                <img src="/第一张.png" alt="" ondragstart="return false">
+                <p>第一张图片</p>
+            </a>
+            <a href="" class="more">
+                更多
+            </a>
+        </div>
+        <div class="item">
+            <a href="">
+                <img src="/第二张.png" alt="" ondragstart="return false">
+                <p>第二张图片</p>
+            </a>
+            <a href="" class="more">
+                更多
+            </a>
+        </div>
+        <div class="item">
+            <a href="">
+                <img src="/第三张.png" alt="" ondragstart="return false">
+                <p>第三张图片</p>
+            </a>
+            <a href="" class="more">
+                更多
+            </a>
+        </div>
+        <div class="item">
+            <a href="">
+                <img src="/第四张.png" alt="" ondragstart="return false">
+                <p>第四张图片</p>
+            </a>
+            <a href="" class="more">
+                更多
+            </a>
+        </div>
+        <div class="item">
+            <a href="">
+                <img src="/第五张.png" alt="" ondragstart="return false">
+                <p>第五张图片</p>
+            </a>
+            <a href="" class="more">
+                更多
+            </a>
+        </div>
+        <div class="trigger">
+        </div>
     </div>
 </div>
-
+<script>
+    let slider = document.querySelector(".slider");
+    let items = slider.querySelectorAll(".item");
+    trigger = slider.querySelector(".trigger");
+    active = 0;
+    console.log(items);
+    console.log(trigger);
+    for(let i=0;i<items.length;i++){
+        let span = document.createElement("span");
+        if(i == 0){
+            span.setAttribute("class","active");
+        }
+        else{
+            items[i].setAttribute("style","transform:translate3d(300px,0px,0px)");
+        }
+        trigger.append(span);
+        span.onclick = function(){
+         if(i !== active){
+             trigger.querySelectorAll("span")[active].setAttribute("class","");
+             span.setAttribute("class","active");
+         }
+         changeSlider(i)
+         active = i;
+        }
+    }
+    function changeSlider(newVal){
+        for(let i=0;i<items.length;i++){
+            if(i<newVal){
+                items[i].setAttribute("style","transform:translate3d(-300px,0px,0px)")
+            }
+            else if(i>newVal){
+                items[i].setAttribute("style","transform:translate3d(300px,0px,0px)")
+            }
+            else{
+                items[i].setAttribute("style","transform:translate3d(0px,0px,0px)")
+            }
+        }
+    }
+    setTimeout(function(){
+        slider.setAttribute("style","opacity: 1")
+    },300)
+    //自制播放器
+    var playB = document.querySelector(".play");
+    //默认情况下视频是暂停的
+    var toggle = "off";
+    //将地址放到videofile中
+    var videofile = document.querySelector(".video");
+    var oBar = document.getElementById("bar");
+    var pro_bg = document.getElementById("pro_bg");
+    playB.onclick = function(){
+        //点击播放按钮判断是否为暂停
+        if(toggle=="off")
+        {
+            videofile.play();
+            playB.style.backgroundImage = "url(/播放.png)";
+            //将视频的播放状态改为ON
+            toggle = "on";
+        }
+        else
+        {
+            //暂停视频
+            videofile.pause();
+            playB.style.backgroundImage = "url(/暂停.png)";
+            toggle = "off";
+        }
+    }
+    videofile.addEventListener("timeupdate",function(){
+        //获取当前时间
+        console.log(this.currentTime)
+        //获取总时间
+        console.log(this.duration);
+        var s = this.currentTime/this.duration;
+        oBar.style.left = s*685 + "px";
+        pro_bg.style.width = 15 + s*685 + "px";
+    });
+    //将时间格式转换为00:00:00
+    function timeToMinute(times){
+       var t;
+        if(times > -1){
+            var hour = Math.floor(times/3600);
+            var min = Math.floor(times/60) % 60;
+            var sec = times % 60;
+            if(hour < 10) {
+                t = '0'+ hour + ":";
+            } else {
+                t = hour + ":";
+            }
+ 
+            if(min < 10){t += "0";}
+            t += min + ":";
+            if(sec < 10){t += "0";}
+            t += sec.toFixed(2);
+        }
+        t=t.substring(0,t.length-3);
+        return t;
+  }
+    var curtime = document.getElementById("currentTime");
+    var duration = document.getElementById("duration");
+    videofile.addEventListener("canplay",function(){
+          //视频总时长
+          var timers = Math.ceil(this.duration); 
+          duration.innerHTML=timeToMinute(timers);
+    });
+    videofile.addEventListener("timeupdate",function(){
+          //视频当前播放时长
+          var timers=Math.ceil(this.currentTime);
+          currentTime.innerHTML=timeToMinute(timers);
+    })
+    //全屏播放
+    function FullScreen() {
+          videofile.webkitRequestFullScreen();
+    }
+    //音量增
+    function AddVolume(){
+          var vol = videofile.volume;
+          if(vol+0.1<1){
+              vol = vol+0.1;
+          }
+          else{
+              vol = 1;
+          }
+          videofile.volume = vol;
+    }
+    //音量减
+    function SubVolume(){
+        var vol = videofile.volume;
+        if(vol-0.1>0){
+              vol = vol-0.1;
+          }
+          else{
+              vol = 0;
+          }
+          videofile.volume = vol;
+    }
+    //动态搜索框
+    $(document).ready(function(){
+        $('.icon').click(function(){
+            $('.search').toggleClass('active')
+        })
+    })
+    //搜索框事件
+    function search(){
+        var $keyword = $("#keyword").val();
+        window.location.href = "http://www.baidu.com/s?wd=" + $keyword;
+    }
+    function entersearch(){
+        var event = window.event || arguments.callee.caller.arguments[0];
+        if(event.keyCode == 13){
+            search();
+        }
+    }
+</script>
 </body>
-
 </html>

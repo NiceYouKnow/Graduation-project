@@ -2,16 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>视频列表</title>
+    <title>视频中心</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/liststyle.css}">
 </head>
 <body>
-<h1>欢迎您！</h1>
-<div>
-    <div class="text-right ">
-        <a href="/homepage" >点此返回主页</a>
+<div class="box1">
+    <h1 class="head">视频列表</h1>
+    <div class="text-right top-panel">
+        <div class="top-lt item item1">
+            <input type="button" class="homepage-but" onclick="zhuye">
+            <a href="/homepage">主页</a>
+            <a href="/videolist">视频列表</a>
+            <a href="/videoupload">视频上传</a>
+        </div>
+        <div class="top-mid item item2">
+            <input type="text" id="sousuo">
+            <input type="button" class="sousuo-but" onclick="sousuo()">
+        </div>
+        <div class="top-rt item item3">
+            <a href="/usernews">用户信息</a>
+            <a href="/changepwd">修改密码</a>
+        </div>
     </div>
-
-    <table>
+    <div class="tb-panel">
+     <table class="table">
         <thead>
         <tr>
             <th>#</th>
@@ -24,40 +38,143 @@
         </thead>
         <tbody th:if="${pageInfo != null}">
                 <tr th:each="video:${pageInfo.list}">
-                    <td th:text="${video.id}"></td>
-                    <td th:text="${video.title}"></td>
-                    <td th:text="${video.type}"></td>
-                    <td th:text="${video.uploadTime}"></td>
+                    <td th:text="${video.id}" class="id"></td>
+                    <td th:text="${video.title }" class="name"></td>
+                    <td th:text="${video.type}" class="type"></td>
+                    <td th:text="${video.uploadTime}" class="time"></td>
                     <td><button><a th:href="@{'/videoPlayById?id='+${video.id }}">播放</a></button></td>
-                    <td><button><a th:href="@{'/deleteVideoById?id='+${video.id}}">删除</a></button></td>          
-                    <td><button><a th:href="@{'/downloadVideoById?id='+${video.id}}">下载</a></button></td>
+                    <td><button><a th:href="@{'/deleteVideoById?id='+${video.id}}">删除</a></button></td>
+                    <td><button onclick="tishi()"><a th:href="@{'/downloadVideoById?id='+${video.id}}">下载</a></button></td>
                 </tr>
         </tbody>
-    </table>
-    <div>
+     </table>
+    </div>
+    <div class="mid-panel">
         当前<span th:text="${pageInfo.pageNum }"></span>页
         |总<span th:text="${pageInfo.pages }"></span>页
         |有<span th:text="${pageInfo.total }"></span>个视频.
     </div>
-    <div>
+    <div class="bot-panel">
         <nav aria-label="Page navigation">
-            <ul>
-                <li><a th:href="@{/videolist}">首页</a></li>
+            <ul class="menu">
+                <li>
+                    <a th:href="@{/videolist}">首页</a>
+                </li>
                     <li>
                         <a th:href="@{'/videolist?pageNum='+${pageInfo.pageNum-1}}" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
+                            上一页
                         </a>
                     </li>
                     <li>
                         <a th:href="@{'/videolist?pageNum='+${pageInfo.pageNum+1}}" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
+                            下一页
                         </a>
                     </li>
-
-                <li><a th:href="@{'/videolist?pageNum='+${pageInfo.pages }}">末页</a></li>
+                <li>
+                    <a th:href="@{'/videolist?pageNum='+${pageInfo.pages }}">末页</a>
+                </li>
             </ul>
         </nav>
     </div>
+    <div class="slider">
+        <div class="item">
+            <a href="">
+                <img src="/第一张.png" alt="" ondragstart="return false">
+                <p>第一张图片</p>
+            </a>
+            <a href="" class="more">
+                更多
+            </a>
+        </div>
+        <div class="item">
+            <a href="">
+                <img src="/第二张.png" alt="" ondragstart="return false">
+                <p>第二张图片</p>
+            </a>
+            <a href="" class="more">
+                更多
+            </a>
+        </div>
+        <div class="item">
+            <a href="">
+                <img src="/第三张.png" alt="" ondragstart="return false">
+                <p>第三张图片</p>
+            </a>
+            <a href="" class="more">
+                更多
+            </a>
+        </div>
+        <div class="item">
+            <a href="">
+                <img src="/第四张.png" alt="" ondragstart="return false">
+                <p>第四张图片</p>
+            </a>
+            <a href="" class="more">
+                更多
+            </a>
+        </div>
+        <div class="item">
+            <a href="">
+                <img src="/第五张.png" alt="" ondragstart="return false">
+                <p>第五张图片</p>
+            </a>
+            <a href="" class="more">
+                更多
+            </a>
+        </div>
+        <div class="trigger">
+        </div>
+    </div>
 </div>
+<script>
+    let slider = document.querySelector(".slider");
+    let items = slider.querySelectorAll(".item");
+    trigger = slider.querySelector(".trigger");
+    active = 0;
+    for(let i=0;i<items.length;i++){
+        //动态创建span元素
+        let span = document.createElement("span");
+        if(i == 0){
+            //第一个span元素设置为active
+            span.setAttribute("class","active");
+        }
+        else{
+            items[i].setAttribute("style","transform:translate3d(300px,0px,0px)");
+        }
+        trigger.append(span);
+        span.onclick = function(){
+         if(i !== active){
+             trigger.querySelectorAll("span")[active].setAttribute("class","");
+             span.setAttribute("class","active");
+         }
+         changeSlider(i)
+         active = i;
+        }
+    }
+    //图片样式设置
+    function changeSlider(newVal){
+        for(let i=0;i<items.length;i++){
+            if(i<newVal){
+                items[i].setAttribute("style","transform:translate3d(-300px,0px,0px)")
+            }
+            else if(i>newVal){
+                items[i].setAttribute("style","transform:translate3d(300px,0px,0px)")
+            }
+            else{
+                items[i].setAttribute("style","transform:translate3d(0px,0px,0px)")
+            }
+        }
+    }
+    setTimeout(function(){
+        slider.setAttribute("style","opacity: 1")
+    },300)
+function search(){
+    var $keyword = $("#sousuo").val();
+    window.location.href = "http://www.baidu.com/s?wd=" + $keyword;
+}
+function tishi(){
+    alert("视频已下载!");
+}
+</script>
 </body>
 </html>

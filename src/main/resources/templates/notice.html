@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>用户须知</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/reset.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/notice.css}">
+    <style>
+    </style>
+</head>
+<body >
+    <div class="top">
+        <input type="text" class="keyword search" id="keyword">
+        <input type="button" class="search_but" onclick="Search()" value="搜索">
+    </div>
+    <div class="panel">
+        <h1>用户须知</h1>
+        <p>1.本站严禁发布博彩、暴力、色情、赌博、诈骗、贩毒、坑人、传销、垃圾信息等一切国家法律禁止的内容，严禁任何其他与增进影视后期技艺、欣赏力、创造力，有损人格、谩骂他人、诋毁、诽谤、中伤、误导广大人民群众的信息，严禁发布任何试图颠覆国家、挑起民族矛盾、破坏社会稳定、窃取公民信息的行为。轻则请君出局，重则移交相关人士、部门处理；</p>
+        <p>2.本站积极支持原创、转载、整理、收集等与影视后期非编相关的软件、插件、教程、素材、模版等有益于促进他人进步、启迪第三者智慧的内容，欢迎那些愿意大力帮组他人、宣传自己、传播优秀文化的同志们、童鞋们来邮投稿，欢迎参与在线、无线、有线、卫星、书信等形式的交流、学习、洽谈、商议；</p>
+        <p>3.为了贯彻国家、行业规定、原则上一切非原创作品皆要求注明出处、作者（公司），二次开发亦要注明第一作者、第二作者等有关版权、权益。但是为了宣传、介绍、试用、推广他人、公司的产品、服务，我们可以在私人利益和广大公众利益面前斟酌、思忖、拿捏、评判、揣度、衡量，只要一切遵守明文规定、墨守成规、无违法人类健康的东西都可以尽情、尽量、尽管、尽心、尽力发表；</p>
+        <p>注册即表示接受本站协议，本站拥有本协议的所有解释权！</p>
+        <a href="/homepage">返回主页</a>
+        <a href="/videolist">视频列表</a>
+        <a href="/videoupload">上传中心</a>
+    </div>
+</body>
+<script>
+    function Search(){
+        var $keyword = $("#keyword").val();
+        window.location.href = "http://www.baidu.com/s?wd=" + $keyword;
+    }
+</script>
+</html>

@@ -3,30 +3,77 @@
 <head>
     <meta charset="UTF-8"/>
     <title>上传</title>
+    <html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"></html>
+    <link rel="stylesheet" type="text/css" th:href="@{/reset.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+    <link rel="shortcut icon" th:href="@{/主页.png}" type="image/x-icon"/><!--上传页面小图标-->
+    <style>
+    </style>
 </head>
-<body>
-<h1>欢迎您！</h1>
-<form id="loginform" class="form-horizontal" method="post" enctype="multipart/form-data"
-                          th:action="@{/govideoupload}">
-                        <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">标题</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="title" class="form-control" id="inputEmail3"
-                                       placeholder="标题">
+<body >
+    <script src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.13.0/js/md5.min.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/ajax.js"></script>
+<h1 style="text-align: center;color: pink;">发布中心</h1>
+<u></u>
+<form id="loginform" class="form-horizontal" method="post" enctype="multipart/form-data">
+    <div class="warp-panel">
+        <div class="top-panel">
+            <div class="top-lt item item1">
+                <input type="button" class="homepage-but" onclick="zhuye()">
+                <a href="/homepage">主页</a>
+                <a href="/videolist">视频列表</a>
+                <a href="/videoupload">上传中心</a>
+            </div>
+            <div class="top-mid item item2">
+                <input type="text" id="sousuo" class="soosuo" placeholder="前往百度搜索">
+                <input type="button" class="sousuo-but" onclick="search()">
+            </div>
+            <div class="top-rt item item3">
+                <a href="/usernews">用户信息</a>
+                <a href="/changepwd">修改密码</a>
+            </div>
+        </div>
+            <div class="mid-panel">
+                <div class="mid-lt ">
+                    <div class='mid-lt-wrap'>
+                        <a href="">行为规范</a>
+                        <a href="/notice">用户须知</a>
+                        <a href="/homepage">主页</a>
+                    </div>
+                </div>
+                <div class="bfc">
+                    <div class="mid-rt">
+                        <div class="midrt-1">
+                        </div>
+                        <div class="midrt-2">
+                            <div class="midrt-top">
+                                <img src="/上传.png" alt="">
+                            </div>
+                            <div class="midrt-mid form-group">
+                                <label for="title"  class="col-sm-2 control-label">标题</label>
+                                <input type="text" placeholder="请在这里输入视频标题,标题不能含有命令字符串" size="42px" id="title" name="title">
+                            </div>
+                            <div class="midrt-but">
+                                <div class='bottomDiv2'>
+                                    <label   class="col-sm-2 control-label">文件</label>
+                                    <input type="file" id="file" name="file" accept="video/*">
+                                </div>
+                                <div class="bottomDiv form-group">
+                                    <p>只能上传视频文件，且大小不超过50M</p>
+                                    <button type="submit" class="upload-but" alt="" id="upload" >上传</button>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">文件</label>
-                            <div class="col-sm-10">
-                                <input type="file" id="chooseImage" name="file">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-default updatabtn" alt="">上传</button>
-
-                            </div>
-                        </div>
-                    </form>
+                    </div>
+            </div>
+            </div>
+            <div class="bot-panel">
+                <p>上传视频及表示您同意<a href="">用户上传视频协议</a>,切勿上传反动，色情等违法视频</p>
+            </div>
+    </div>
+</form>
+<script>
+</script>
 </body>
 </html>
