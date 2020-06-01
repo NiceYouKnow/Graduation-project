@@ -78,10 +78,10 @@ body{
     cursor: pointer;
     transition: 0.5s;
     border-radius: 4px;
-    background-image: url("/搜索1.png");
+    background-image: url("/static/imgs/搜索1.png");
 }
 .panel-head .headrt .search.active .icon{
-    background-image: url("/删除.png");
+    background-image: url("/static/imgs/删除.png");
     /* background-size: 100% 100%; */
     background-size: cover;
 }
@@ -163,7 +163,7 @@ body{
     background-color: aqua;
 }
 .panel-bot .trigger span.active{
-    background-image: url("/灯泡.png");
+    background-image: url("/static/imgs/灯泡.png");
     transform: scale(2);
     background-size: 100% 100%;
     border: 0;
@@ -197,7 +197,7 @@ body{
     width: 30px;
     height: 30px;
     margin: 7px 9px 0 9px;
-    background-image: url(/暂停.png);
+    background-image: url(/static/imgs/暂停.png);
     background-size: 30px,30px;
 }
 .player .controls .volumeadd{
@@ -205,7 +205,7 @@ body{
     width: 30px;
     height: 30px;
     margin: 8px 9px 0 9px;
-    background-image: url(/大音量.png);
+    background-image: url(/static/imgs/大音量.png);
     background-size: 30px,30px;
 }
 .player .controls .volumesub{
@@ -213,7 +213,7 @@ body{
     width: 30px;
     height: 30px;
     margin: 8px 9px 0 9px;
-    background-image: url(/小音量.png);
+    background-image: url(/static/imgs/小音量.png);
     background-size: 30px,30px;
 }
 .player .controls .progress{
@@ -230,7 +230,7 @@ body{
     width: 30px;
     height: 30px;
     margin: 7px 9px 0 9px;
-    background-image: url(/全屏.png);
+    background-image: url(/static/imgs全屏.png);
     background-size: 30px,30px;
 }
 

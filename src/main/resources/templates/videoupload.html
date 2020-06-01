@@ -4,8 +4,10 @@
     <meta charset="UTF-8"/>
     <title>上传</title>
     <html lang="zh-CN" xmlns:th="http://www.thymeleaf.org"></html>
-    <link rel="stylesheet" type="text/css" th:href="@{/reset.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+    <!-- <link rel="stylesheet" type="text/css" th:href="@{/reset.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}"> -->
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/style.css">
     <link rel="shortcut icon" th:href="@{/主页.png}" type="image/x-icon"/><!--上传页面小图标-->
     <style>
     </style>
@@ -13,7 +15,7 @@
 <body >
     <script src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.13.0/js/md5.min.js"></script>
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="/ajax.js"></script>
+    <script src="../static/js/ajax.js"></script>
 <h1 style="text-align: center;color: pink;">发布中心</h1>
 <u></u>
 <form id="loginform" class="form-horizontal" method="post" enctype="multipart/form-data">
@@ -48,7 +50,7 @@
                         </div>
                         <div class="midrt-2">
                             <div class="midrt-top">
-                                <img src="/上传.png" alt="">
+                                <img src="../static/imgs/上传.png" alt="">
                             </div>
                             <div class="midrt-mid form-group">
                                 <label for="title"  class="col-sm-2 control-label">标题</label>
@@ -60,7 +62,7 @@
                                     <input type="file" id="file" name="file" accept="video/*">
                                 </div>
                                 <div class="bottomDiv form-group">
-                                    <p>只能上传视频文件，且大小不超过50M</p>
+                                    <p>只能上传视频文件，且大小不超过500M</p>
                                     <button type="submit" class="upload-but" alt="" id="upload" >上传</button>
                                 </div>
                             </div>
@@ -69,7 +71,7 @@
             </div>
             </div>
             <div class="bot-panel">
-                <p>上传视频及表示您同意<a href="">用户上传视频协议</a>,切勿上传反动，色情等违法视频</p>
+                <p>上传视频即表示您同意<a href="notice">用户上传视频协议</a>,切勿上传反动，色情等违法视频</p>
             </div>
     </div>
 </form>

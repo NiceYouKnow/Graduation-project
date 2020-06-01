@@ -5,31 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>register</title>
+    <!-- <link rel="stylesheet" type="text/css" th:href="@{/usernews.css}"> -->
+    <link rel="stylesheet" href="../static/css/usernews.css">
 </head>
 <body>
-<h2>欢迎</h2>
-    <ul><a href="/changeuser">修改个人信息</a></ul>
-    <ul><a href="/changepwd">修改密码</a></ul>
+<div class="usernews">
+<h2>个人信息</h2>
+<div class="head">
+    <a href="/changeuser">修改信息</a>
+    <a href="/changepwd">修改密码</a>
+</div>
 <form th:action="@{/usernews}" method="post">
-    <div>
+    <div class="menu">
         <ul>
             <li>
-                邮箱：<p name="email" th:text="${putemail}"></p>
+                <p>邮箱：</p><p name="email" th:text="${putemail}"></p>
             </li>
             <li>
-                昵称：<p name="name" th:text="${putusername}"></p>
+                <p>昵称：</p><p name="name" th:text="${putusername}"></p>
             </li>
             <li>
-                性别：<p name="sex" th:text="${putsex}"></p>
+                <p>性别：</p><p name="sex" th:text="${putsex}"></p>
             </li>
             <li>
-                生日：<p name="birthday" th:text="${putbirthday}"></p>
+                <p>生日：</p><p name="birthday" th:text="${putbirthday}"></p>
             </li>
             <li>
-                年龄：<p name="age" th:text="${putage}"></p>
+                <p>年龄：</p><p name="age" th:text="${putage}"></p>
             </li>
         </ul>
     </div>
 </form>
+</div>
 </body>
 </html>

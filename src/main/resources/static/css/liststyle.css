@@ -48,13 +48,13 @@ body{
     height: 50px;
     width: 50px;
     border: none;
-    background: url(/index-off.png) no-repeat;
+    background: url(/static/imgs/index-off.png) no-repeat;
     background-size: 48px 48px;
     position: relative;
     cursor: pointer;
 } 
 .top-panel .top-lt .homepage-but:hover {
-    background: url(/index.png) no-repeat;
+    background: url(/static/imgs/index.png) no-repeat;
     background-size: 48px 48px;
 }
 .top-panel .top-lt text {
@@ -64,13 +64,13 @@ body{
     height: 50px;
     width: 50px;
     border: none;
-    background: url(/搜索.png) no-repeat;
+    background: url(/static/imgs/搜索.png) no-repeat;
     background-size: 48px 48px;
     position: relative;
     margin-left: 10px;
 }
 .top-panel .top-mid .sousuo-but:hover {
-    background: url(/搜索-on.png) no-repeat;
+    background: url(/static/imgs/搜索-on.png) no-repeat;
     background-size: 48px 48px;
 }
 .top-panel .item {
@@ -139,7 +139,6 @@ body{
 }
 .bot-panel{
     height: 40px;
-    float: left;
 }
 .bot-panel .menu li{
     float: left;
@@ -147,12 +146,10 @@ body{
     width: 100px;
     list-style: none;
     text-decoration: none;
-    margin:  0px 100px;
-    margin-top: -20px;
+    margin:  0px 5%;
     background-color: #262626;
     border-radius: 10px;
     transition: 0.5s;
-    margin-left: 250px;
 }
 .bot-panel .menu li:hover{
     background-color: #0070ff;
@@ -237,7 +234,7 @@ body{
     background-color: aqua;
 }
 .slider .trigger span.active{
-    background-image: url("/灯泡.png");
+    background-image: url("/static/imgs/灯泡.png");
     transform: scale(2);
     background-size: 100% 100%;
     border: 0;

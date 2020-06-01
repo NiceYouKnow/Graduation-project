@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8"/>
     <title>视频中心</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/liststyle.css}">
+    <!-- <link rel="stylesheet" type="text/css" th:href="@{/liststyle.css}"> -->
+    <link rel="stylesheet" href="../static/css/liststyle.css">
 </head>
 <body>
 <div class="box1">
@@ -54,10 +55,10 @@
         |总<span th:text="${pageInfo.pages }"></span>页
         |有<span th:text="${pageInfo.total }"></span>个视频.
     </div>
-    <div class="bot-panel">
+    <div class="bot-panel" style="text-align: center;">
         <nav aria-label="Page navigation">
             <ul class="menu">
-                <li>
+                <li style="margin-left: 20%;">
                     <a th:href="@{/videolist}">首页</a>
                 </li>
                     <li>
@@ -79,7 +80,7 @@
     <div class="slider">
         <div class="item">
             <a href="">
-                <img src="/第一张.png" alt="" ondragstart="return false">
+                <img src="../static/imgs/第一张.png" alt="" ondragstart="return false">
                 <p>第一张图片</p>
             </a>
             <a href="" class="more">
@@ -88,7 +89,7 @@
         </div>
         <div class="item">
             <a href="">
-                <img src="/第二张.png" alt="" ondragstart="return false">
+                <img src="../static/imgs/第二张.png" alt="" ondragstart="return false">
                 <p>第二张图片</p>
             </a>
             <a href="" class="more">
@@ -97,7 +98,7 @@
         </div>
         <div class="item">
             <a href="">
-                <img src="/第三张.png" alt="" ondragstart="return false">
+                <img src="../static/imgs/第三张.png" alt="" ondragstart="return false">
                 <p>第三张图片</p>
             </a>
             <a href="" class="more">
@@ -106,7 +107,7 @@
         </div>
         <div class="item">
             <a href="">
-                <img src="/第四张.png" alt="" ondragstart="return false">
+                <img src="../static/imgs/第四张.png" alt="" ondragstart="return false">
                 <p>第四张图片</p>
             </a>
             <a href="" class="more">
@@ -115,7 +116,7 @@
         </div>
         <div class="item">
             <a href="">
-                <img src="/第五张.png" alt="" ondragstart="return false">
+                <img src="../static/imgs/第五张.png" alt="" ondragstart="return false">
                 <p>第五张图片</p>
             </a>
             <a href="" class="more">

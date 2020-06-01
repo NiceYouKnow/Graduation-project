@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" th:href="@{/videoplay.css}">
+    <!-- <link rel="stylesheet" type="text/css" th:href="@{/videoplay.css}"> -->
+    <link rel="stylesheet" href="../static/css/videoplay.css">
     <title>在线视频播放</title>
     
 </head>
@@ -49,7 +50,7 @@
     <div class="panel-bot slider" id="lunbo-panel">
         <div class="item">
             <a href="">
-                <img src="/第一张.png" alt="" ondragstart="return false">
+                <img src="../static/imgs/第一张.png" alt="" ondragstart="return false">
                 <p>第一张图片</p>
             </a>
             <a href="" class="more">
@@ -58,7 +59,7 @@
         </div>
         <div class="item">
             <a href="">
-                <img src="/第二张.png" alt="" ondragstart="return false">
+                <img src="../static/imgs/第二张.png" alt="" ondragstart="return false">
                 <p>第二张图片</p>
             </a>
             <a href="" class="more">
@@ -67,7 +68,7 @@
         </div>
         <div class="item">
             <a href="">
-                <img src="/第三张.png" alt="" ondragstart="return false">
+                <img src="../static/imgs/第三张.png" alt="" ondragstart="return false">
                 <p>第三张图片</p>
             </a>
             <a href="" class="more">
@@ -76,7 +77,7 @@
         </div>
         <div class="item">
             <a href="">
-                <img src="/第四张.png" alt="" ondragstart="return false">
+                <img src="../static/imgs/第四张.png" alt="" ondragstart="return false">
                 <p>第四张图片</p>
             </a>
             <a href="" class="more">
@@ -85,7 +86,7 @@
         </div>
         <div class="item">
             <a href="">
-                <img src="/第五张.png" alt="" ondragstart="return false">
+                <img src="../static/imgs/第五张.png" alt="" ondragstart="return false">
                 <p>第五张图片</p>
             </a>
             <a href="" class="more">
@@ -150,7 +151,7 @@
         if(toggle=="off")
         {
             videofile.play();
-            playB.style.backgroundImage = "url(/播放.png)";
+            playB.style.backgroundImage = "url(/static/imgs/播放.png)";
             //将视频的播放状态改为ON
             toggle = "on";
         }
@@ -158,7 +159,7 @@
         {
             //暂停视频
             videofile.pause();
-            playB.style.backgroundImage = "url(/暂停.png)";
+            playB.style.backgroundImage = "url(/static/imgs/暂停.png)";
             toggle = "off";
         }
     }

@@ -34,13 +34,13 @@ color: pink;
 height: 50px;
 width: 50px;
 border: none;
-background: url(/index-off.png) no-repeat;
+background: url(/static/imgs/index-off.png) no-repeat;
 background-size: 48px 48px;
 position: relative;
 cursor: pointer;
 }
 .top-panel .top-lt .homepage-but:hover {
-background: url(/index.png) no-repeat;
+background: url(/static/imgs/index.png) no-repeat;
 background-size: 48px 48px;
 }
 .top-panel .top-lt text {
@@ -50,13 +50,13 @@ height: 50px;
 height: 50px;
 width: 50px;
 border: none;
-background: url(/搜索.png) no-repeat;
+background: url(/static/imgs/搜索.png) no-repeat;
 background-size: 48px 48px;
 position: relative;
 margin-left: 10px;
 }
 .top-panel .top-mid .sousuo-but:hover {
-background: url(/搜索-on.png) no-repeat;
+background: url(/static/imgs/搜索-on.png) no-repeat;
 background-size: 48px 48px;
 }
 .top-panel .item {
@@ -190,13 +190,11 @@ height: 300px;
 .bottomDiv p{
     margin-top: 20px
     ;position: relative;
-    right: 24px;
+    left: 24px;
 }
 .bot-panel p{
     text-indent:10px ;
-    position:absolute;
-    bottom:10%;
-    left:45%;
+    margin-left: 45%;
 }
 @keyframes bga{
     0%{
