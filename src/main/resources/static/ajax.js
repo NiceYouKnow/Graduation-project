@@ -9,9 +9,14 @@ $(function () {
         var titlestring = document.getElementById('title').value;
         var title=document.getElementById('title').value;
         let file = document.getElementById("file").files[0];
+        let SQLre = /exec|insert|select|drop|grant|alter|delete|update|count|chr|mid|master|truncate|char|declare|or|and/;
         //判断标题是否为空
         if(!title){
             alert("视频标题不能为空！")
+            return;
+        }
+        else if(SQLre.test(title)){
+            alert("输入字符不规范！");
             return;
         }
         //去除字符串左右两侧空格

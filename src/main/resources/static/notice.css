@@ -3,13 +3,21 @@
     margin: 0;
 }
 body{
+    height: 100%;
     background-color: white;
-    
+}
+.top{
+    height: 10%;
+}
+.top .search{
+    height: 100%;
+    width: 20%;
+    margin-left: 600px;
 }
 .panel{
     background-color: aliceblue;
     font-size: 20px;
-    height: 1000px;
+    height: 90%;
 }
 .panel h1{
     text-align: center;

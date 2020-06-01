@@ -17,7 +17,7 @@
         </div>
         <div class="top-mid item item2">
             <input type="text" id="sousuo">
-            <input type="button" class="sousuo-but" onclick="sousuo">
+            <input type="button" class="sousuo-but" onclick="sousuo()">
         </div>
         <div class="top-rt item item3">
             <a href="/usernews">用户信息</a>
@@ -44,7 +44,7 @@
                     <td th:text="${video.uploadTime}" class="time"></td>
                     <td><button><a th:href="@{'/videoPlayById?id='+${video.id }}">播放</a></button></td>
                     <td><button><a th:href="@{'/deleteVideoById?id='+${video.id}}">删除</a></button></td>
-                    <td><button><a th:href="@{'/downloadVideoById?id='+${video.id}}">下载</a></button></td>
+                    <td><button onclick="tishi()"><a th:href="@{'/downloadVideoById?id='+${video.id}}">下载</a></button></td>
                 </tr>
         </tbody>
      </table>
@@ -168,6 +168,13 @@
     setTimeout(function(){
         slider.setAttribute("style","opacity: 1")
     },300)
+function search(){
+    var $keyword = $("#sousuo").val();
+    window.location.href = "http://www.baidu.com/s?wd=" + $keyword;
+}
+function tishi(){
+    alert("视频已下载至D盘!");
+}
 </script>
 </body>
 </html>

@@ -9,6 +9,10 @@
     </style>
 </head>
 <body >
+    <div class="top">
+        <input type="text" class="keyword search" id="keyword">
+        <input type="button" class="search_but" onclick="Search()" value="搜索">
+    </div>
     <div class="panel">
         <h1>用户须知</h1>
         <p>1.本站严禁发布博彩、暴力、色情、赌博、诈骗、贩毒、坑人、传销、垃圾信息等一切国家法律禁止的内容，严禁任何其他与增进影视后期技艺、欣赏力、创造力，有损人格、谩骂他人、诋毁、诽谤、中伤、误导广大人民群众的信息，严禁发布任何试图颠覆国家、挑起民族矛盾、破坏社会稳定、窃取公民信息的行为。轻则请君出局，重则移交相关人士、部门处理；</p>
@@ -21,5 +25,9 @@
     </div>
 </body>
 <script>
+    function Search(){
+        var $keyword = $("#keyword").val();
+        window.location.href = "http://www.baidu.com/s?wd=" + $keyword;
+    }
 </script>
 </html>
