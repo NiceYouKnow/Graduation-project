@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>登陆</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+</head>
+<body>
+    <canvas id="canvas">
+    </canvas>
+    <div id=good>
+        <div style="position: absolute;height: 100%;width: 1200px;margin:auto;left:0; right:0; top:-25%; bottom:0;">
+            <div class="login">
+                <div style="height: 50px;padding: 10px 20px;text-align: center;border-bottom: 1px solid rgb(178, 178, 178)">
+                    <a href="#">账号登录</a>
+                    <a href="./register">快速注册</a>
+                </div>
+                <p style="color: red;" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+                <form th:action="@{/login}" method="POST" onsubmit="return check_submit()">
+                    <div class="input_control">
+                        <input type="text" name="email1" class="from_input" placeholder="请输入邮箱地址" id="email" />
+                    </div>
+                    <div class="input_control">
+                        <input type="password" name="password1" placeholder="请输入密码" id="pd" />
+                    </div>
+                    <div class="input_control">
+                        <button class="button" type="submit">登录</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="imgBox">
+            <div class="verify"></div>
+            <div class="verified"></div>
+        </div>
+        <div class="handle">
+            <span class="swiper"></span>
+            <span class="text">拖动滑块</span>
+        </div>
+        <div class="refreshBox">
+            <span class="refresh">点击切换图片</span>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src='../static/js/jquery-3.1.1.min.js'></script>
+<script src='../static/js/login.js'></script>
+<script src="../static/js/vue.js"></script>
+</html>

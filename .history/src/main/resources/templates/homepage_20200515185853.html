@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>首页</title>
+    <link rel="stylesheet" href="../static/css/homepage.css">
+    <style>
+        canvas{
+        display: block;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">   
+        <div class="welcome">
+            <p> 欢迎访问 </p>
+        </div>
+        <!--向下滚动提示-->
+        <a class="scroll">
+            向下滚动
+        </a>
+        <canvas id="canvas"></canvas>
+    </header>
+    <div class="container">
+        <section class="section">
+            <h3 class="sub-title">
+                <span>Hello</span>
+                <span>/</span>
+                欢迎
+            </h3>
+            <br>
+            <div class="mk-item-box">
+                <div class="mk-item">
+                    <a href="usernews" >
+                        <article class="mk-color-item color1">
+                            <div class="item-logo">
+                            </div>
+                            <h3>个人信息</h3>
+                            <p>查看修改个人信息</p>
+                        </article>
+                    </a>
+                </div>
+                <div class="mk-item">
+                    <a href="videoupload">
+                        <article class="mk-color-item color2">
+                            <div class="item-logo">
+                            </div>
+                            <h3>上传</h3>
+                            <p>上传您的文件</p>
+                        </article>
+                    </a>
+                </div>
+                <div class="mk-item">
+                    <a href="videolist" >
+                        <article class="mk-color-item color3">
+                            <div class="item-logo">
+                            </div>
+                            <h3>文件列表</h3>
+                            <p>查看您已经上传的文件</p>
+                        </article>
+                    </a>
+                </div>
+                <div class="mk-item">
+                    <a th:href="@{/loginout}" >
+                        <article class="mk-color-item color2">
+                            <div class="item-logo">
+                            </div>
+                            <h3>登出账号</h3>
+                            <br>
+                        </article>
+                    </a>
+                </div>
+            </section> 
+        <section>
+            <div class="about-content">
+                <p>szsecKK用来陈列一些新鲜、好玩的 Html 作品。这些作品中，有一些是本人原创或改写的，
+                还有一些是别人的开源大作，但因其很有特色，值得学习玩味，因此也出现在这里。</p>
+                
+                <p>本人崇尚开源精神，因此“szsecKK”中大部分作品是开源的。
+                即使没有开源，您也可以通过右键>查看源代码以进行查阅。
+                请注意，开源不代表可以滥用，转载或使用这些源代码时，请务必保留原始的版权信息！
+                这是一个程序员最基本的修养，也是对原作者最起码的尊重。</p>
+                
+                
+                
+                <p>欲了解更多内容，请访问我的 <a href="https://space.bilibili.com/495440008" target="_blank">个人博客</a>。</p>
+            </div>
+        </section>
+        </div>
+</body>
+<script src='../static/js/homepage.js'></script>
+</html>

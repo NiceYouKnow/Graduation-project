@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html{height: 100%}
+        body{margin: 0;height: 100%;
+            background: #fff;}
+        canvas{display: block;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        }
+        .body_content{
+            position:absolute;
+            top:30%;
+            left: 20%;
+            height: 20%;
+            background: palevioletred;
+            width: 20%;
+        }
+        .text{
+            background: transparent;
+            display: flex;
+            top: 0;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas">
+</canvas>
+<div class="text">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="./css/register.css" />
+        <br>
+    <form th:action="@{/user/register}" method="post" onsubmit="return check_submit()" name="form1">
+        <div id="app">
+            <table >
+                <h1>welcome</h1>
+                <tr>
+                    <td>邮箱</td>
+                    <td>
+                        <input type="text" name="email" placeholder="" id="email">
+                    </td>
+                </>
+                <tr>
+                   <td>用户名</td>
+                   <td>
+                       <input type="text" name="username" onblur="blur_username()" onfocus="focus_username()" >
+                   </td>
+                   <td>
+                    <td ><span id="result_name"></span> 
+                    </td>
+               </tr>
+               <tr>
+                   <td>性别</td>
+                   <td>
+                       <input type="radio" name="sex" value="男"/>男
+                       <input type="radio" name="sex" value="女"/>女
+                   </td>
+               </tr>
+               <tr>
+                   <td>生日</td>
+                   <td>
+                       <input type="date" name="birthday" placeholder=""  @change="getAge" v-model="birthday">
+                   </td>
+               </tr>
+               <tr>
+                   <td>年龄</td>
+                   <td>
+                       <input type="number" name="age" placeholder=""  v-model="agg" readonly>
+                   </td>
+               </tr>
+               <tr>
+                   <td>密码</td>
+                   <td>
+                       <input type="password" name="password" placeholder="8位以上大小写数字"  id="pwd" onkeyup="checkPassword()">
+                       <span id="pwdtishi"></span>
+                    </td>
+               </tr> 
+               <tr>
+                   <td>确认密码</td>
+                   <td>
+                       <input type="password" name="passwordd" placeholder="请再次输入密码" id="pwd1" onkeyup="validate()" onkeyup="checkPassword()">
+                       <span id="tishi"></span>
+                    </td>
+               </tr>
+                </table>
+            <div>
+                <button type="submit" id="button">注册</button>
+            </div>
+        </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/register.js"></script>
+</div>
+<script src="src/index.js"></script>
+</body>
+</html>

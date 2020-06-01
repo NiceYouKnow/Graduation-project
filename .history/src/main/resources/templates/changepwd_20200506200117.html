@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>register</title>
+    <st
+</head>
+<body>
+<h2>修改密码</h2>
+<form th:action="@{/gochangepwd}" method="post">
+    <div>
+        <ul>
+            <li>
+                邮箱：<p name="email" th:text="${putemail}"></p>
+            <input type="text" name="email" placeholder="邮箱" th:value="${putemail}"> 
+            </li>
+            <li>
+                旧密码：<input type="password" name="oldpassword">
+            </li>
+            <li>
+                新密码：<input type="password" name="newpassword">
+            </li>
+            <li>
+                确认密码：<input type="password" name="newpassword1">
+            </li>
+            <!--前端需验证newpassword==newpassword1-->
+        </ul>
+        <div>
+            <button type="submit" >修改</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>

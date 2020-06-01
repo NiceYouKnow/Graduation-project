@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/changepwd.css">
+    <title>register</title>
+    <style>
+        html{
+            height: 100%
+        }
+        body{
+        margin: 0;
+        height: 100%;
+        background: #fff;}
+        canvas
+        {
+        display: block;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        }
+        .body_content{
+            position:absolute;
+            top:30%;
+            left: 20%;
+            height: 20%;
+            background: palevioletred;
+            width: 20%;
+        }
+        .test{
+            background: transparent;
+            display: flex;
+            top: 0;
+            position: absolute;
+            right:50%;
+        }
+    </style>
+</head>
+<body>
+   <canvas id="canvas">
+    </canvas>
+    <div class="test">
+    <div class="chongzhi"><p>重置密码</p></div>
+<form th:action="@{/gochangepwd}" method="post">
+    <h1>修改密码</h1>
+    <div class="box">
+    邮箱：<p name="email" th:text="${putemail}"></p>
+    <input type="text" name="email" th:value="${putemail}"> 
+    旧密码：<input type="password" name="oldpassword">   
+    新密码：<input type="password" name="newpassword">
+    确认密码：<input type="password" name="newpassword1">
+    <button class="submit" >确认修改</button>
+    </div></div>
+</form>
+</body>
+ <script src="../static/js/changepwd.js"></script>
+</html>

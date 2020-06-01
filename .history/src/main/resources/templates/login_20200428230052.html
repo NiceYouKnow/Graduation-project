@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+     <link rel="stylesheet" type="text/css" href="css/login.css" /> 
+    <!-- <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"> -->
+    <title>首页</title>
+</head>
+
+<body>
+    <div class="content nav">
+    </div>
+    <div class="main">
+        <div style="position: absolute;height: 100%;width: 1200px;margin:auto;left:0; right:0; top:0; bottom:0;">
+            <div class="login">
+                <div
+                    style="height: 50px;padding: 10px 20px;text-align: center;border-bottom: 1px solid rgb(178, 178, 178)">
+                    <a href="#">账号登录</a>
+                    <a href="./register">快速注册</a>
+                </div>  
+                <p style="color: red;" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+                <form th:action="@{/login}" method="POST">
+                    <div class="input_control">
+                        <input type="text" name="email1" class="from_input" placeholder="请输入邮箱地址" id="email" />
+                    </div>
+                    <div class="input_control">
+                        <input type="password" name="password1" style="width:340px;height:70px;" placeholder="请输入密码" id="tt"/>
+                    </div>
+                    <div class="input_checkbox">
+                        <input type="checkbox" style="display: inline-block;">
+                        <span style="display: inline-block;font-size: 12px;font-style: italic;">记住密码</span>
+                    </div>
+                    <div class="input_control">
+                        <input id="btn1" type="submit" value="登 录" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="content bg">
+            <img src="bgp.jpg" />
+        </div>
+    </div>
+    <div class="content footer">
+        <div style="margin: 0 auto;text-align: center" class="info"></div>
+    </div>
+</body>
+<script src="js/login.js"></script>
+</html>

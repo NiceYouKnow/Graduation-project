@@ -1,0 +1,89 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="./css/register.css" />
+        <title>register</title>
+    </head>
+    <body>
+    <h2>欢迎注册</h2>
+    <form th:action="@{/user/register}" method="post">
+        <div>
+            <ul>
+                <li>
+                    <input type="text" name="email" placeholder="邮箱">
+                </li>
+                <li>
+                    <input type="text" name="username" placeholder="姓名">
+                </li>
+                <li>
+                    <input type="text" name="sex" placeholder="性别">
+                </li>
+                <li>
+                    <input type="date" name="birthday" placeholder="生日">
+                </li>
+                <li>
+                    <input type="number" name="age" placeholder="年龄">
+                </li>
+                <li>
+                    <input type="password" name="password" placeholder="密码">
+                </li>
+            </ul>
+            <div>
+                <button type="submit" >注册</button>
+            </div>
+        </div>
+    </form>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/register.js"></script>
+    </html>
+
+    <div id="app">
+ <table>
+ <tr>
+     <td>邮箱</td>
+     <td>
+         <input type="text" name="email" placeholder="">
+     </td>
+ </tr>
+ <tr>
+    <td>邮箱</td>
+    <td>
+        <input type="text" name="username" placeholder="">
+    </td>
+</tr>
+<tr>
+    <td>邮箱</td>
+    <td>
+        <input type="text" name="sex" placeholder="">
+    </td>
+</tr>
+<tr>
+    <td>生日</td>
+    <td>
+        <input type="text" name="birthday" placeholder="">
+    </td>
+</tr>
+<tr>
+    <td>年龄</td>
+    <td>
+        <input type="text" name="age" placeholder="">
+    </td>
+</tr>
+<tr>
+    <td>密码</td>
+    <td>
+        <input type="password" name="password" placeholder="请输入6-20位密码">
+    </td>
+</tr>
+<tr>
+    <td>确认密码</td>
+    <td>
+        <input type="password" name="passwordd" placeholder="">
+    </td>
+</tr>
+ </table>
+</div>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>登陆</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+</head>
+<body>
+<h1>欢迎您！</h1>
+<form th:action="@{/login}" method="POST">
+    <p style="color: red;" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+<p>邮箱：<input name="email1"  type="text" placeholder="email"  ></p>
+<p>密码：<input name="password1"  type="password" placeholder="password" id="pd"></p>
+<button type="submit">提交</button>
+</form>
+<ul><a href="/register">注册</a></ul>
+<div class="box">
+    <div class="imgBox">
+        <div class="verify"></div>
+        <div class="verified"></div>
+    </div>
+    <div class="handle">
+        <span class="swiper"></span>
+        <span class="text">拖动滑块</span>
+    </div>
+    <div class="refreshBox">
+        <span class="refresh">点击切换图片</span>
+    </div>
+</div>
+<script src='../static/js/jquery-3.1.1.min.js'></script>
+<script src='../static/js/login.js'></script>
+</body>
+</html>
