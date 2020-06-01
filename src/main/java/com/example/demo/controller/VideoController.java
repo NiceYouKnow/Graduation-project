@@ -149,7 +149,7 @@ public class VideoController {
         //     dir.mkdir();   
         // }
         String filepath=Sha1withRSAUtil.decode(video.getPath());
-        File file = new File("D:\\"+video.getTitle()+video.getType());//下载视频存储路径
+        File file = new File("/Users/yunfei/Downloads/"+video.getTitle()+video.getType());//下载视频存储路径
         boolean result = FastDFSClient.downloadFile(filepath,file);
         if(result) {
             System.out.println("下载文件："+file.getName()+" 成功");
