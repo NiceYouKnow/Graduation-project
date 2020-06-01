@@ -29,7 +29,7 @@
                     <td th:text="${video.type}"></td>
                     <td th:text="${video.uploadTime}"></td>
                     <td><button><a th:href="@{'/videoPlayById?id='+${video.id }}">播放</a></button></td>
-                    <td><button><a th:href="@{'/deleteVideoById?id='+${video.id}}">删除</a></button></td>
+                    <td><button><a th:href="@{'/deleteVideoById?id='+${video.id}}">删除</a></button></td>          
                     <td><button><a th:href="@{'/downloadVideoById?id='+${video.id}}">下载</a></button></td>
                 </tr>
         </tbody>
