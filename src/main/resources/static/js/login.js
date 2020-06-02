@@ -160,7 +160,7 @@ if (verImg.length) {
 } else {
   imgBox.prepend(`<img class='verImg' src="../static/imgs/${imgs[index]}.jpg" />`)
 }
-verify.css('background-image', `url('../static/imgs/${imgs[index]}.jpg')`)
+verify.css('background-image', `url('/static/imgs/${imgs[index]}.jpg')`)
 }
 
 class Circle {

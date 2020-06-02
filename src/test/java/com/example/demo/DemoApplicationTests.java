@@ -17,7 +17,7 @@ class DemoApplicationTests {
 
 	@Test
 	public void Upload() {
-		String fileUrl = this.getClass().getResource("/static/test.jpg").getPath();// 测试照片文件是否存储成功
+		String fileUrl = this.getClass().getResource("/static/imgs/test.jpg").getPath();// 测试照片文件是否存储成功
 		File file = new File(fileUrl);
 		String str = FastDFSClient.uploadFile(file);
 		FastDFSClient.getResAccessUrl(str);
