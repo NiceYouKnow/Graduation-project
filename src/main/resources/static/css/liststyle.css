@@ -173,7 +173,7 @@ body{
 }
 .slider{
     width: 300px;
-    height: 30%;
+    height: 100%;
     position: relative;
     overflow: hidden;
     opacity: 0;
