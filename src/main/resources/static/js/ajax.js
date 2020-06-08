@@ -9,7 +9,7 @@ $(function () {
         var titlestring = document.getElementById('title').value;
         var title=document.getElementById('title').value;
         let file = document.getElementById("file").files[0];
-        let SQLre = /exec|insert|select|drop|grant|alter|delete|update|count|chr|mid|master|truncate|char|declare|or|and/;
+        let SQLre = /exec|insert|select|drop|grant|alter|delete|update|count|chr|mid|master|truncate|char|declare|or|and|database/;
         //判断标题是否为空
         if(!title){
             alert("视频标题不能为空！")
@@ -22,7 +22,7 @@ $(function () {
         //去除字符串左右两侧空格
         titlestring = titlestring.replace(/(^\s*)|(\s*$)/g, "");
         //去除字符串中的特殊字符
-        titlestring = titlestring.replace(/[&\|\\\*^%$#@\-]/g, "");
+        titlestring = titlestring.replace(/[&\|\\\*^%$#@\-']/g, "");
         //去除字符串中用户可能会输入的一些具有攻击性的恶意代码
         titlestring = titlestring.replace("<SCRIPT>", "");
         titlestring = titlestring.replace("</SCRIPT>", "");

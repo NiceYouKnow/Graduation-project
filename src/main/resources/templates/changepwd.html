@@ -51,8 +51,6 @@
         <form th:action="@{/gochangepwd}" method="post">
             <div class="box">
                 <p name="email" th:text="${putemail}"></p>
-                <p>邮箱：</p>
-                <input type="text" id="email" name="email" th:value="${putemail}">
                 <p>旧密码：</p>
                 <input type="password" name="oldpassword" >
                 <p> 新密码：</p>
